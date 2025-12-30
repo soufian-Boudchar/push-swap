@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:19:25 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/30 09:25:49 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/30 22:41:59 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,73 @@ static int	ft_size_arr(char **arr)
 	return (size);
 }
 
-t_list	*ft_parsing(int ac, char *av[])
+static char	**get_token(int ac, char *av[])
 {
 	char	*joined;
 	char	**tokens;
-	t_list	*stack_a;
 
 	if (!validate_input(av + 1))
-		return (ft_print_error_list());
-	joined = ft_join(ac - 1, av + 1);
+	{
+		return (NULL);
+	}
+	joined = ft_join(ac, av);
 	if (!joined)
-		return (ft_print_error_list());
+	{
+		return (NULL);
+	}
 	tokens = ft_split(joined);
 	free(joined);
 	if (!tokens)
-		return (ft_print_error_list());
+	{
+		return (NULL);
+	}
 	if (!validate_input(tokens) || !ft_check_tokens(tokens))
-		return (error_free_tokens(tokens));
+	{
+		ft_free_tokens(tokens);
+		return (NULL);
+	}
+	return (tokens);
+}
+
+static t_list	*process_stack(char **tokens)
+{
+	t_list	*stack_a;
+
 	stack_a = ft_init_stack_a(tokens);
 	if (!stack_a)
-		return (error_free_tokens(tokens));
+	{
+		ft_free_tokens(tokens);
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	ft_free_tokens(tokens);
 	if (!ft_check_duplicates(stack_a))
-		return (error_free_stack(&stack_a));
+	{
+		ft_list_free(&stack_a);
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	return (stack_a);
+}
+
+t_list	*ft_parsing(int ac, char *av[])
+{
+	t_list	*stack_a;
+	char	**tokens;
+
+	if (ac <= 1)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	
+	tokens = get_token(ac, av);
+	if (!tokens)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	stack_a = process_stack(tokens);
 	return (stack_a);
 }
 

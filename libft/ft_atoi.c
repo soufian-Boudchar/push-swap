@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:10:10 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:02:38 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/30 09:25:12 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ long	ft_atoi(char *ptr)
 	while (ft_isdigit(ptr[i]))
 		result = result * 10 + (ptr[i++] - '0');
 	result = result * sign;
-	if (result > INT_MAX || result < INT_MIN)
-		return ((long)INT_MAX + 1);
+	if (result > 2147483647 || result < -2147483648)
+		return (2147483648);
 	return (result);
 }

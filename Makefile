@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 OBJ_DIR = object_files
 
 LIBFT_SRC = libft/ft_add_back.c libft/ft_join.c libft/ft_strjoin.c libft/strcat.c \

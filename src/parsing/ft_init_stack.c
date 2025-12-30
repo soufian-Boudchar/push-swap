@@ -76,7 +76,7 @@ t_list	*ft_parsing(int ac, char *av[])
 	t_list	*stack_a;
 	char	**tokens;
 
-	if (ac <= 1)
+	if (ac < 1)
 	{
 		write(2, "Error\n", 6);
 		exit(1);

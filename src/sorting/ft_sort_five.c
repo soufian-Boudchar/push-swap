@@ -6,6 +6,8 @@ void ft_sort_five(t_list **stack_a, t_list **stack_b)
     tmp = (*stack_a)->next;
     t_list *min;
     min = (*stack_a);
+    if(!ft_check_sorted((*stack_a)))
+        return;
     while(tmp)
     {
         if(min->data > tmp->data)

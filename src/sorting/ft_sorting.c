@@ -3,7 +3,7 @@
 void ft_sorting(t_list **stack_a, t_list **stack_b)
 {
     int size;
-    size = ft_list_size(stack_a);
+    size = ft_list_size((*stack_a));
 
     if(size == 2)
         ft_sort_two(stack_a);

@@ -2,6 +2,8 @@
 
 void ft_sort_two(t_list **stack)
 {
+    if(!ft_check_sorted((*stack)))
+        return;
       ft_sa(stack);
 }
 
@@ -10,7 +12,8 @@ void ft_sort_three(t_list **stack)
     int     frst;
     int     scnd;
     int     thrd;
-    
+    if(!ft_check_sorted((*stack)))
+        return;
     frst = (*stack)->data;
     scnd = (*stack)->next->data;
     thrd = (*stack)->next->next->data;
@@ -29,5 +32,5 @@ void ft_sort_three(t_list **stack)
         {
             ft_ra(stack);
             ft_sa(stack);
-        }    
+        } 
 }

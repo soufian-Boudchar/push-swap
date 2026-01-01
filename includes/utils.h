@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:56:32 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:51:56 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/31 18:12:03 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 
 typedef struct s_list
 {
-	int				value;
+	int				data;
 	struct s_list	*next;
 }					t_list;
-t_list	*add_node(int content);
+
+t_list	*ft_new_node(int content);
 void	ft_list_free(t_list **head);
-void	add_back(t_list **head, t_list *new);
+void	ft_add_back(t_list **head, t_list *new);
 void	ft_add_front(t_list **head, t_list *new);
  
 long	ft_atoi(char *ptr);
@@ -35,4 +36,5 @@ char	*ft_strjoin(char *s1, char *s2);
 int	ft_strlen(const char *s);
 char	*ft_substr(char *s, int start, int len);
 void	ft_strcat(char *dst, char *src);
+void	ft_free_tokens(char **tokens);
 #endif 

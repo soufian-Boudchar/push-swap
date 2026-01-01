@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 16:09:44 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/01 00:07:47 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/12/29 16:53:05 by sboudcha          #+#    #+#             */
+/*   Updated: 2025/12/31 18:12:03 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/utils.h"
 
-static t_list *ft_test(t_list *stack_a, int ac, char *av[])
+void	ft_add_back(t_list **head, t_list *new)
 {
-	stack_a = ft_parsing(ac - 1, av + 1);
-	
-	t_list *tmp;
-	tmp = stack_a;
-	while (tmp)
+	t_list	*tmp;
+
+	if (!*head)
 	{
-		printf("%d\n", tmp->data);
-		tmp = tmp->next;
+		*head = new;
+		return ;
 	}
-	return stack_a;
-}
-
-int	main(int ac, char *av[])
-{
-	t_list *stack_a;
-	stack_a = ft_test(stack_a, ac, av);
-	return 0;
+	tmp = *head;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }

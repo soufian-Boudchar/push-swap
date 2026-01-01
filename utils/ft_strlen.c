@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_tokens.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 09:31:30 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/30 22:13:50 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/10/14 12:22:49 by mbidlal           #+#    #+#             */
+/*   Updated: 2025/12/31 17:31:48 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-
-void	ft_free_tokens(char **tokens)
+#include "../includes/utils.h"
+int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (tokens[i])
-		free(tokens[i++]);
-	free(tokens);
+	while (s[i])
+		i++;
+	return (i);
 }

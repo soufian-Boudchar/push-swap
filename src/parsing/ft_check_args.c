@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:09:18 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:31:30 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/31 15:17:11 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_check_duplicates(t_list *stack)
 		j = i->next;
 		while (j)
 		{
-			if (i->value == j->value)
+			if (i->data == j->data)
 			{
 				return (0);
 			}

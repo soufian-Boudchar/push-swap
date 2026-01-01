@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_add_front.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 16:53:05 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 16:53:44 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/12/29 16:09:31 by sboudcha          #+#    #+#             */
+/*   Updated: 2025/12/31 17:53:30 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	add_back(t_list **head, t_list *new)
+#include "../includes/utils.h"
+void	ft_add_front(t_list **head, t_list *new)
 {
-	t_list	*tmp;
-
+	if (!new)
+		return;
+	
 	if (!*head)
-	{
-		*head = new;
-		return ;
-	}
-	tmp = *head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
+		{
+			*head = new;
+			return;
+		}
+	new->next = *head;
+	*head = new;
 }

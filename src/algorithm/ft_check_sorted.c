@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcat.c                                           :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 16:06:34 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:03:47 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/12/31 23:57:52 by sboudcha          #+#    #+#             */
+/*   Updated: 2026/01/01 00:03:34 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void	ft_strcat(char *dst, char *src)
+int ft_check_sorted(t_list **stack_a)
 {
-	size_t dst_len;
-	size_t i;
-
-	if (!dst)
-		return ;
-	dst_len = ft_strlen(dst);
-	i = 0;
-
-	while (src[i])
-	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
-}
+    int i;
+    i = 0;
+    
+    
+    
+}   

@@ -6,12 +6,11 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 20:41:17 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:03:27 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/31 17:31:41 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
+#include "../includes/utils.h"
 static int	ft_count(char *s)
 {
 	int	i;

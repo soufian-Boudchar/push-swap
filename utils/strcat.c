@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_lists.c                                    :+:      :+:    :+:   */
+/*   strcat.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 15:31:38 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:11:04 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/12/23 16:06:34 by sboudcha          #+#    #+#             */
+/*   Updated: 2025/12/31 17:31:52 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_list_free(t_list **head)
+#include "../includes/utils.h"
+void	ft_strcat(char *dst, char *src)
 {
-	if (!head || !*head)
+	size_t dst_len;
+	size_t i;
+
+	if (!dst)
 		return ;
+	dst_len = ft_strlen(dst);
+	i = 0;
 
-	t_list *tmp;
-
-	tmp = (*head)->next;
-
-	while (tmp)
+	while (src[i])
 	{
-		free(*head);
-		*head = tmp;
-		tmp = tmp->next;
+		dst[dst_len + i] = src[i];
+		i++;
 	}
-	free(*head);
+	dst[dst_len + i] = '\0';
 }

@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_new_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:13:43 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:03:31 by sboudcha         ###   ########.fr       */
+/*   Created: 2025/12/29 16:55:28 by sboudcha          #+#    #+#             */
+/*   Updated: 2025/12/31 17:34:42 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strjoin(char *s1, char *s2)
+#include "../includes/utils.h"
+t_list	*ft_new_node(int content)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*ptr;
+	t_list	*node;
 
-	if (!s1 || !s2)
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	ptr = malloc(s1_len + s2_len + 1);
-	if (!ptr)
-		return (NULL);
-	ptr[0] = '\0';
-	ft_strcat(ptr, s1);
-	ft_strcat(ptr, s2);
-	return (ptr);
+	node->data = content;
+	node->next = NULL;
+	return (node);
 }

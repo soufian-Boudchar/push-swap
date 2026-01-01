@@ -6,12 +6,11 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:15:03 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/29 17:03:21 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/31 17:31:36 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
+#include "../includes/utils.h"
 static int	ft_len(int size, char **str)
 {
 	int	i;

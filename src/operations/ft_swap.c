@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/31 14:45:55 by sboudcha          #+#    #+#             */
+/*   Updated: 2025/12/31 22:46:06 by sboudcha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/push_swap.h"
+
+static void ft_swap(t_list **stack)
+{
+    int tmp;
+    if (!stack || !*stack || !(*stack)->next)
+        return;
+    
+    tmp = (*stack)->data;
+    (*stack)->data = (*stack)->next->data;
+    (*stack)->next->data = tmp;
+}
+
+void ft_sa(t_list **stack_a)
+{
+    ft_swap(stack_a);
+    write(1, "sa\n", 3);
+}
+
+void ft_sb(t_list **stack_b)
+{
+    ft_swap(stack_b);
+    write(1, "sb\n", 3);
+}
+
+void ft_ss(t_list **stack_a, t_list **stack_b)
+{
+    ft_swap(stack_a);
+    ft_swap(stack_b);
+    write(1, "ss\n", 3);
+}

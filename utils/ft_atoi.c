@@ -6,12 +6,11 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:10:10 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/30 09:25:12 by sboudcha         ###   ########.fr       */
+/*   Updated: 2025/12/31 17:31:30 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
+#include "../includes/utils.h"
 static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

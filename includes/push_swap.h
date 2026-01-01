@@ -48,4 +48,5 @@ void ft_sort_two(t_list **stack);
 void ft_sort_three(t_list **stack);
 void ft_sort_four(t_list **stack_a, t_list **stack_b);
 void ft_sort_five(t_list **stack_a, t_list **stack_b);
+void ft_sorting(t_list **stack_a, t_list **stack_b);
 #endif

@@ -2,9 +2,7 @@
 
 void ft_sort_two(t_list **stack)
 {
-  if((*stack)->data > (*stack)->next->data)
       ft_sa(stack);
-  return;
 }
 
 void ft_sort_three(t_list **stack)

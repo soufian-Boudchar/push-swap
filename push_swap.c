@@ -19,6 +19,6 @@ int	main(int ac, char *av[])
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_parsing(ac - 1, av + 1);
- 	ft_sort_five(&stack_a, &stack_b);
+ 	ft_sorting(&stack_a, &stack_b);
 	return 0;
 }

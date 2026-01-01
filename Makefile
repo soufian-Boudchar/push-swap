@@ -12,8 +12,9 @@ SRC =       src/parsing/ft_check_args.c 	src/parsing/ft_init_stack.c \
  	        src/operations/ft_swap.c		src/operations/ft_push.c \
 			src/operations/ft_rotate.c		src/operations/ft_reverse_rotate.c \
 			push_swap.c 					src/parsing/ft_get_tokens.c \
-			src/parsing/ft_check_stack.c  src/sorting/ft_small_sort.c \
-			src/sorting/ft_sort_four.c 			src/sorting/ft_sort_five.c 
+			src/parsing/ft_check_stack.c  	src/sorting/ft_small_sort.c \
+			src/sorting/ft_sort_four.c 		src/sorting/ft_sort_five.c \
+			src/sorting/ft_sorting.c
 			
 
 OBJ = $(SRC:.c=.o)

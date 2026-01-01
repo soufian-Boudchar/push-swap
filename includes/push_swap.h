@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:09:51 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/31 22:47:09 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/01 02:38:21 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 //stack utils
 int		validate_input(char **av);
 int		ft_check_tokens(char **str);
-int		ft_check_duplicates(t_list *stack);
-t_list	*ft_init_stack_a(char **tokens);
+int	    ft_check_duplicates(t_list *stack);
+t_list	*ft_init_stack(char **tokens);
+int      ft_check_sorted(t_list *stack_a);
 //nodes utils
 t_list	*ft_new_node(int content);
 t_list	*ft_parsing(int ac, char *av[]);

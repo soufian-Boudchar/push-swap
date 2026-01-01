@@ -6,29 +6,16 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:09:44 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/01 00:07:47 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/01 01:16:25 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-static t_list *ft_test(t_list *stack_a, int ac, char *av[])
-{
-	stack_a = ft_parsing(ac - 1, av + 1);
-	
-	t_list *tmp;
-	tmp = stack_a;
-	while (tmp)
-	{
-		printf("%d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	return stack_a;
-}
-
 int	main(int ac, char *av[])
 {
 	t_list *stack_a;
-	stack_a = ft_test(stack_a, ac, av);
+	stack_a = NULL;
+	stack_a = ft_parsing(ac - 1, av + 1);
 	return 0;
 }

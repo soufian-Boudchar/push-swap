@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:09:18 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/31 15:17:11 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/01 02:11:49 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,28 +57,6 @@ int	ft_check_tokens(char **tokens)
 			j++;
 		}
 		i++;
-	}
-	return (1);
-}
-
-int	ft_check_duplicates(t_list *stack)
-{
-	t_list	*i;
-	t_list	*j;
-
-	i = stack;
-	while (i)
-	{
-		j = i->next;
-		while (j)
-		{
-			if (i->data == j->data)
-			{
-				return (0);
-			}
-			j = j->next;
-		}
-		i = i->next;
 	}
 	return (1);
 }

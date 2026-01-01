@@ -43,5 +43,9 @@ void ft_rr(t_list **stack_a, t_list **stack_b);
 void ft_rra(t_list **stack_a);
 void ft_rrb(t_list **stack_b);
 void ft_rrr(t_list **stack_a, t_list **stack_b);
-
+// sorting
+void ft_sort_two(t_list **stack);
+void ft_sort_three(t_list **stack);
+void ft_sort_four(t_list **stack_a, t_list **stack_b);
+void ft_sort_five(t_list **stack_a, t_list **stack_b);
 #endif

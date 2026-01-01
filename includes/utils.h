@@ -27,7 +27,8 @@ t_list	*ft_new_node(int content);
 void	ft_list_free(t_list **head);
 void	ft_add_back(t_list **head, t_list *new);
 void	ft_add_front(t_list **head, t_list *new);
- 
+int ft_list_size(t_list *list);
+
 long	ft_atoi(char *ptr);
 char	*ft_join(int size, char **str);
 char	**ft_split(char *s);

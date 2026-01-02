@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/utils.h"
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	s1_len;

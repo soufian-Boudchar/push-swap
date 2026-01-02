@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #include "../includes/utils.h"
+
 void	ft_add_front(t_list **head, t_list *new)
 {
 	if (!new)
-		return;
-	
+		return ;
 	if (!*head)
-		{
-			*head = new;
-			return;
-		}
+	{
+		*head = new;
+		return ;
+	}
 	new->next = *head;
 	*head = new;
 }

@@ -14,22 +14,22 @@
 
 static int	ft_size_arr(char **arr)
 {
-    int	size;
+	int	size;
 
-    size = 0;
-    while (arr[size])
-        size++;
-    return (size);
+	size = 0;
+	while (arr[size])
+		size++;
+	return (size);
 }
 
 t_list	*ft_init_stack(char **tokens)
 {
-	int size;
+	int		size;
+	int		i;
+	t_list	*stack;
 
-	int i;
 	i = 0;
 	size = ft_size_arr(tokens);
-	t_list *stack;
 	stack = NULL;
 	while (i < size)
 	{
@@ -44,4 +44,3 @@ t_list	*ft_init_stack(char **tokens)
 	ft_set_index(&stack);
 	return (stack);
 }
-

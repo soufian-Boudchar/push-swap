@@ -6,11 +6,12 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:15:03 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/31 17:31:36 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/02 21:34:38 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/utils.h"
+
 static int	ft_len(int size, char **str)
 {
 	int	i;
@@ -62,8 +63,8 @@ static char	*ft_res(int size, char *res, char **str)
 
 char	*ft_join(int size, char **str)
 {
-	char *res;
-	int len;
+	char	*res;
+	int		len;
 
 	if (!str)
 		return (NULL);

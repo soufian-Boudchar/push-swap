@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "../includes/utils.h"
+
 void	ft_free_tokens(char **tokens)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (tokens[i])

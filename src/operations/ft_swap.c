@@ -18,9 +18,9 @@ static void ft_swap(t_list **stack)
     if (!stack || !*stack || !(*stack)->next)
         return;
     
-    tmp = (*stack)->data;
-    (*stack)->data = (*stack)->next->data;
-    (*stack)->next->data = tmp;
+    tmp = (*stack)->content;
+    (*stack)->content = (*stack)->next->content;
+    (*stack)->next->content = tmp;
 }
 
 void ft_sa(t_list **stack_a)

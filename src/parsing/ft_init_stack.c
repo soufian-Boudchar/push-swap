@@ -41,6 +41,7 @@ t_list	*ft_init_stack(char **tokens)
 		}
 		i++;
 	}
+	ft_set_index(&stack);
 	return (stack);
 }
 

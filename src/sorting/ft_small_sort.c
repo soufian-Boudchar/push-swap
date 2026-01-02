@@ -14,9 +14,9 @@ void ft_sort_three(t_list **stack)
     int     thrd;
     if(!ft_check_sorted((*stack)))
         return;
-    frst = (*stack)->data;
-    scnd = (*stack)->next->data;
-    thrd = (*stack)->next->next->data;
+    frst = (*stack)->content;
+    scnd = (*stack)->next->content;
+    thrd = (*stack)->next->next->content;
     if (frst < scnd && scnd > thrd && frst > thrd)
         ft_rra(stack);
     if (frst > scnd && scnd < thrd && frst > thrd)

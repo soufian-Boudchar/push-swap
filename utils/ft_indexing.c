@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_node.c                                      :+:      :+:    :+:   */
+/*   ft_sort_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 16:55:28 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/31 17:34:42 by sboudcha         ###   ########.fr       */
+/*   Created: 2026/01/02 03:50:52 by sboudcha          #+#    #+#             */
+/*   Updated: 2026/01/02 03:50:52 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/utils.h"
-t_list	*ft_new_node(int content)
+static int ft_find_index(t_list *stack, int content)
 {
-	t_list	*node;
+    t_list *tmp;
+    tmp = stack;
+    int i;
+    i = 0;
+    while (tmp)
+    {
+        if (tmp->content < content)
+            i++;
+        tmp = tmp->next;
+    }
+    return i;
+}
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+void ft_set_index(t_list **stack)
+{
+    t_list *tmp;
+    tmp = *stack;
+    while (tmp)
+    {
+        tmp->index = ft_find_index(*stack, tmp->content);
+        tmp = tmp->next;
+    }
 }

@@ -73,10 +73,8 @@ t_list	*ft_parsing(int ac, char *av[])
 	char	**tokens;
 
 	if (ac < 1)
-	{
-		write(2, "Error\n", 6);
 		exit(1);
-	}
+
 	
 	tokens = get_token(ac, av);
 	if (!tokens)

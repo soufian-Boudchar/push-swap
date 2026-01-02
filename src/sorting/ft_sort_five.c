@@ -3,19 +3,18 @@
 void ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
     t_list *tmp;
-    tmp = (*stack_a)->next;
+    tmp = (*stack_a);
     t_list *min;
     min = (*stack_a);
     if(!ft_check_sorted((*stack_a)))
         return;
     while(tmp)
     {
-        if(min->data > tmp->data)
+        if(min->content > tmp->content)
             min = tmp;
         tmp = tmp->next;
     }
-    tmp = (*stack_a);
-    while((*stack_a)->data != min->data)
+    while((*stack_a)->content != min->content)
     {
         if(!min->next || !min->next->next)
             ft_rra(stack_a);

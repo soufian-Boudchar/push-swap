@@ -22,7 +22,7 @@ int ft_check_sorted(t_list *stack_a)
 
     while (j)
     {
-        if (i->data > j->data)
+        if (i->content > j->content)
             return (1);
         j = j->next;
         i = i->next;
@@ -41,7 +41,7 @@ int	ft_check_duplicates(t_list *stack)
 		j = i->next;
 		while (j)
 		{
-			if (i->data == j->data)
+			if (i->content == j->content)
 			{
 				return (0);
 			}

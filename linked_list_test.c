@@ -3,7 +3,7 @@
 #include <unistd.h>
 typedef struct s_list
 {
-    int                data;
+    int                content;
     struct s_list    *next;
 }                    t_list;
 
@@ -14,7 +14,7 @@ t_list    *ft_new_node(int content)
     node = malloc(sizeof(t_list));
     if (!node)
         return (NULL);
-    node->data = content;
+    node->content = content;
     node->next = NULL;
     return (node);
 }
@@ -51,12 +51,12 @@ int main()
 
     while(j)
     {
-        if (j->data < i->data)
+        if (j->content < i->content)
             exit(1);
         else
-            printf("%d", i->data);
+            printf("%d", i->content);
         if (!j->next)
-            printf("%d", j->data);
+            printf("%d", j->content);
         
         i = i->next;
         j = j->next;

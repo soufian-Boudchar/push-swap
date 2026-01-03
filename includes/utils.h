@@ -12,7 +12,6 @@
 
 #ifndef UTILS_H
 # define UTILS_H
-# include <limits.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -30,7 +29,7 @@ void				ft_add_back(t_list **head, t_list *new);
 void				ft_add_front(t_list **head, t_list *new);
 int					ft_list_size(t_list *list);
 void				ft_set_index(t_list **stack);
-// strings utils
+// strings utils :
 long				ft_atoi(char *ptr);
 char				*ft_join(int size, char **str);
 char				**ft_split(char *s);

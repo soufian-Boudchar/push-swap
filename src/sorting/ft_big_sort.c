@@ -59,34 +59,21 @@ static void	ft_push_back_a(t_list **stack_a, t_list **stack_b)
 }
 static t_list	*ft_range_finder(t_list *stack, int range)
 {
-	t_list *first;
 	t_list *last;
 	t_list *tmp;
-	int i = 0;
-	int j = 0;
 	tmp = stack;
-	while (tmp)
-	{
-		if (tmp->index <= range)
-			last = tmp;
-		tmp = tmp->next;
-		i++;
-	}
-	tmp = stack;
+	
+	
 	while (tmp)
 	{
 		if (tmp->index <= range)
 		{
-			first = tmp;
+			last = tmp;
 			break;
 		}
 		tmp = tmp->next;
-		j++;
 	}
-	if (j > i)
-		return last;
-	else 
-		return first;
+	return last;
 }
 void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 {
@@ -95,7 +82,7 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 
 	i = 0;
 	if (ft_list_size(*stack_a) <= 100)
-		range = 15;
+		range = 3;
 	else
 		range = 35;
 	while (*stack_a)
@@ -107,10 +94,10 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 				ft_rb(stack_b);
 			i++;
 		}
-			else if (ft_check_pos(*stack_a, ft_range_finder(*stack_a, i + range)) > ft_list_size(*stack_a) / 2)
-				ft_ra(stack_a);
-			else
-				ft_rra(stack_a);
+		else if (ft_check_pos(*stack_a, ft_range_finder(*stack_a, i + range)) < ft_list_size(*stack_a) / 2)
+			ft_ra(stack_a);
+		else
+			ft_rra(stack_a);
 	}
 	ft_push_back_a(stack_a, stack_b);
 }

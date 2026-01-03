@@ -17,20 +17,20 @@ static int	ft_count(char *str)
 	int	nb;
 
 	nb = 0;
-	while(*str == ' ')
+	while (*str == ' ')
 		str++;
-	while(*str)
+	while (*str)
 	{
-		if(*str != ' ')
+		if (*str != ' ')
 		{
-			while(*str && *str != ' ')
+			while (*str && *str != ' ')
 				str++;
 			nb++;
 		}
 		else
 			str++;
 	}
-	return nb;
+	return (nb);
 }
 
 static int	ft_skip(char *str)

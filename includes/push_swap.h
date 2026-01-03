@@ -13,10 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "utils.h"
-# include <limits.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
 // stack utils
 int		validate_input(char **av);
 int		ft_check_tokens(char **str);

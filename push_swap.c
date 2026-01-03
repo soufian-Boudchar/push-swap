@@ -21,5 +21,6 @@ int	main(int ac, char *av[])
 	stack_b = NULL;
 	stack_a = ft_parsing(ac - 1, av + 1);
 	ft_sorting(&stack_a, &stack_b);
+	ft_list_free(&stack_a);
 	return (0);
 }

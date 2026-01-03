@@ -61,7 +61,7 @@ static t_list	*process_stack(char **tokens)
 	if (!ft_check_sorted(stack_a))
 	{
 		ft_list_free(&stack_a);
-		exit(0);
+		exit(1);
 	}
 	return (stack_a);
 }
@@ -79,6 +79,6 @@ t_list	*ft_parsing(int ac, char *av[])
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	stack_a = process_stack(tokens);	
+	stack_a = process_stack(tokens);
 	return (stack_a);
 }

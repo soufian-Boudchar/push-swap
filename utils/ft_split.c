@@ -12,27 +12,25 @@
 
 #include "../includes/utils.h"
 
-static int	ft_count(char *s)
+static int	ft_count(char *str)
 {
-	int	i;
 	int	nb;
-	int	in_word;
 
-	i = 0;
 	nb = 0;
-	in_word = 0;
-	while (s[i])
+	while(*str == ' ')
+		str++;
+	while(*str)
 	{
-		if (s[i] == ' ')
-			in_word = 0;
-		else if (in_word == 0)
+		if(*str != ' ')
 		{
-			in_word = 1;
+			while(*str && *str != ' ')
+				str++;
 			nb++;
 		}
-		i++;
+		else
+			str++;
 	}
-	return (nb);
+	return nb;
 }
 
 static int	ft_skip(char *str)

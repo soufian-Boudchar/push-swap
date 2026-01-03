@@ -31,7 +31,7 @@ $(NAME): $(OBJ) $(UTILS_OBJ)
 		
 %.o: %.c $(HEADERS)
 	@$(CC) $(CFLAGS) -c $< -o $@
-		@echo "Compiling → $<"
+		@echo "Compiling ==> $<"
 
 		
 clean:

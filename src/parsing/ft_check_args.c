@@ -29,7 +29,7 @@ int	validate_input(char **av)
 				has_digit = 1;
 			else if (!(av[i][j] == ' ' || av[i][j] == '+' || av[i][j] == '-'))
 				return (0);
-				j++;
+			j++;
 		}
 		if (!has_digit)
 			return (0);

@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra   -g #<--------delete -g
+CFLAGS = -Wall -Wextra -Werror  -g #<--------delete -g
 OBJ_DIR = object_files
 
 UTILS_SRC = utils/ft_add_back.c 	utils/ft_join.c 	 	utils/ft_strjoin.c 		utils/ft_strcat.c \

@@ -46,7 +46,10 @@ static char	*ft_res(int size, char *res, char **str)
 		tmp = res;
 		res = ft_strjoin(res, str[i]);
 		if (!res)
+		{
+			free(tmp);
 			return (NULL);
+		}
 		free(tmp);
 		if (i < size - 1)
 		{

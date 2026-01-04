@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 02:05:49 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/02 21:48:05 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:26:38 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,14 @@ char	**get_token(int ac, char *av[])
 	char	**tokens;
 
 	if (!validate_input(av + 1))
-	{
 		return (NULL);
-	}
 	joined = ft_join(ac, av);
 	if (!joined)
-	{
 		return (NULL);
-	}
 	tokens = ft_split(joined);
 	free(joined);
 	if (!tokens)
-	{
 		return (NULL);
-	}
 	if (!validate_input(tokens) || !ft_check_tokens(tokens))
 	{
 		ft_free_tokens(tokens);

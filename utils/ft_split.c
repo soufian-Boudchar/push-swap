@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 20:41:17 by sboudcha          #+#    #+#             */
-/*   Updated: 2025/12/31 17:31:41 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/03 21:51:38 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	ft_count(char *str)
 	{
 		if (*str != ' ')
 		{
+			nb++;
 			while (*str && *str != ' ')
 				str++;
-			nb++;
 		}
 		else
 			str++;
@@ -61,7 +61,8 @@ static char	**ft_free_error(char **ptr)
 	while (ptr[i])
 		free(ptr[i++]);
 	free(ptr);
-	return (NULL);
+	ptr = NULL;
+	return (ptr);
 }
 
 char	**ft_split(char *s)

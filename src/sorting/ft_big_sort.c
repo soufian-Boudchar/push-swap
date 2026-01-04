@@ -38,6 +38,24 @@ static int	ft_check_pos(t_list *stack, t_list *max)
 	}
 	return (pos);
 }
+static t_list	*ft_range_finder(t_list *stack, int range)
+{
+	t_list *last;
+	t_list *tmp;
+	tmp = stack;
+	
+	
+	while (tmp)
+	{
+		if (tmp->index <= range)
+		{
+			last = tmp;
+			break;
+		}
+		tmp = tmp->next;
+	}
+	return last;
+}
 
 static void	ft_push_back_a(t_list **stack_a, t_list **stack_b)
 {
@@ -57,24 +75,7 @@ static void	ft_push_back_a(t_list **stack_a, t_list **stack_b)
 		ft_pa(stack_b, stack_a);
 	}
 }
-static t_list	*ft_range_finder(t_list *stack, int range)
-{
-	t_list *last;
-	t_list *tmp;
-	tmp = stack;
-	
-	
-	while (tmp)
-	{
-		if (tmp->index <= range)
-		{
-			last = tmp;
-			break;
-		}
-		tmp = tmp->next;
-	}
-	return last;
-}
+
 void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	range;
@@ -82,7 +83,7 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 
 	i = 0;
 	if (ft_list_size(*stack_a) <= 100)
-		range = 3;
+		range = 15;
 	else
 		range = 35;
 	while (*stack_a)

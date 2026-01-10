@@ -47,3 +47,57 @@ void	ft_sort_three(t_list **stack)
 		ft_sa(stack);
 	}
 }
+
+void	ft_sort_four(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*min;
+	t_list	*tmp;
+
+	tmp = (*stack_a);
+	min = (*stack_a);
+	while (tmp)
+	{
+		if (min->content > tmp->content)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	while ((*stack_a)->content != min->content)
+	{
+		if (!min->next || !min->next->next)
+			ft_rra(stack_a);
+		else
+			ft_ra(stack_a);
+	}
+	if (!ft_check_sorted((*stack_a)))
+		return ;
+	ft_pb(stack_a, stack_b);
+	ft_sort_three(stack_a);
+	ft_pa(stack_b, stack_a);
+}
+
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*tmp;
+	t_list	*min;
+
+	tmp = (*stack_a);
+	min = (*stack_a);
+	if (!ft_check_sorted((*stack_a)))
+		return ;
+	while (tmp)
+	{
+		if (min->content > tmp->content)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	while ((*stack_a)->content != min->content)
+	{
+		if (!min->next || !min->next->next)
+			ft_rra(stack_a);
+		else
+			ft_ra(stack_a);
+	}
+	ft_pb(stack_a, stack_b);
+	ft_sort_four(stack_a, stack_b);
+	ft_pa(stack_b, stack_a);
+}

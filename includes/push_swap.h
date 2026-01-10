@@ -17,7 +17,7 @@
 int		validate_input(char **av);
 int		ft_check_tokens(char **str);
 int		ft_check_duplicates(t_list *stack);
-t_list	*ft_init_stack(char **tokens);
+t_list	*ft_init_stack_a(char **tokens);
 int		ft_check_sorted(t_list *stack_a);
 // nodes utils
 t_list	*ft_new_node(int content);

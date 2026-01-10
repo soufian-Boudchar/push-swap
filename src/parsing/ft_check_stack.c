@@ -6,12 +6,12 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 23:57:52 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/02 21:40:30 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/05 01:32:13 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
+//check if the input is sorted!
 int	ft_check_sorted(t_list *stack_a)
 {
 	t_list	*i;
@@ -28,6 +28,7 @@ int	ft_check_sorted(t_list *stack_a)
 	}
 	return (0);
 }
+//check if the input is duplicated !
 
 int	ft_check_duplicates(t_list *stack)
 {

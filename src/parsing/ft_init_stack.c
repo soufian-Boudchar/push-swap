@@ -6,7 +6,7 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:19:25 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/01 02:38:21 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/05 01:58:48 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ static int	ft_size_arr(char **arr)
 		size++;
 	return (size);
 }
+//stack initialisation:
 
-t_list	*ft_init_stack(char **tokens)
+t_list	*ft_init_stack_a(char **tokens)
 {
 	int		size;
 	int		i;
@@ -33,7 +34,7 @@ t_list	*ft_init_stack(char **tokens)
 	stack = NULL;
 	while (i < size)
 	{
-		ft_add_back(&stack, ft_new_node((int)ft_atoi(tokens[i])));
+		ft_add_back(&stack, ft_new_node(ft_atoi(tokens[i])));
 		if (ft_atoi(tokens[i]) == 2147483648)
 		{
 			ft_list_free(&stack);

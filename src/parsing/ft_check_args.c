@@ -6,12 +6,15 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 16:09:18 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/01 02:11:49 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/05 01:06:31 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Check argv:
+// only digits, (" ", "+", "-")allowed
+// each arg must contain at least one digit --> !"+   2" !"+"
 int	validate_input(char **av)
 {
 	int	i;
@@ -37,6 +40,9 @@ int	validate_input(char **av)
 	}
 	return (1);
 }
+// Check tokens:
+// only one optional sign at the beginning
+// no extra '+' or '-' inside the number --> !"++12" !"--12"
 
 int	ft_check_tokens(char **tokens)
 {

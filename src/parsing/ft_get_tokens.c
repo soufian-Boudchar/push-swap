@@ -6,13 +6,13 @@
 /*   By: sboudcha <sboudcha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 02:05:49 by sboudcha          #+#    #+#             */
-/*   Updated: 2026/01/04 18:26:38 by sboudcha         ###   ########.fr       */
+/*   Updated: 2026/01/05 02:13:30 by sboudcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-char	**get_token(int ac, char *av[])
+//join and split, 
+char	**ft_split_and_validate(int ac, char *av[])
 {
 	char	*joined;
 	char	**tokens;
@@ -34,11 +34,11 @@ char	**get_token(int ac, char *av[])
 	return (tokens);
 }
 
-static t_list	*process_stack(char **tokens)
+static t_list	*ft_build_stack(char **tokens)
 {
 	t_list	*stack_a;
 
-	stack_a = ft_init_stack(tokens);
+	stack_a = ft_init_stack_a(tokens);
 	if (!stack_a)
 	{
 		ft_free_tokens(tokens);
@@ -52,11 +52,6 @@ static t_list	*process_stack(char **tokens)
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	if (!ft_check_sorted(stack_a))
-	{
-		ft_list_free(&stack_a);
-		exit(1);
-	}
 	return (stack_a);
 }
 
@@ -66,13 +61,13 @@ t_list	*ft_parsing(int ac, char *av[])
 	char	**tokens;
 
 	if (ac < 1)
-		exit(1);
-	tokens = get_token(ac, av);
+		exit(0);
+	tokens = ft_split_and_validate(ac, av);
 	if (!tokens)
 	{
 		write(2, "Error\n", 6);
 		exit(1);
 	}
-	stack_a = process_stack(tokens);
+	stack_a = ft_build_stack(tokens);
 	return (stack_a);
 }

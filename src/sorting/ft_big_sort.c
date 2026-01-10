@@ -39,27 +39,6 @@ static int	ft_check_pos(t_list *stack, t_list *max)
 	return (pos);
 }
 
-static int	ft_range_finder(t_list *stack, int range)
-{
-	t_list	*last;
-	t_list	*tmp;
-	int		pos;
-
-	last = NULL;
-	tmp = stack;
-	while (tmp)
-	{
-		if (tmp->index <= range)
-		{
-			last = tmp;
-			break ;
-		}
-		tmp = tmp->next;
-	}
-	pos = ft_check_pos(stack, last);
-	return (pos);
-}
-
 static void	ft_push_back_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*max;
@@ -98,10 +77,8 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b)
 				ft_rb(stack_b);
 			i++;
 		}
-		else if (ft_range_finder(*stack_a, range) < ft_list_size(*stack_a) / 2)
-			ft_ra(stack_a);
 		else
-			ft_rra(stack_a);
+			ft_ra(stack_a);
 	}
 	ft_push_back_a(stack_a, stack_b);
 }

@@ -12,16 +12,16 @@
 
 #include "../../includes/push_swap.h"
 
-static void	ft_push(t_list **src, t_list **dst)
+static void	ft_push(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-	if (!src || !*src)
+	if (!stack_a || !*stack_a)
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dst;
-	*dst = tmp;
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp->next = *stack_b;
+	*stack_b = tmp;
 }
 
 void	ft_pb(t_list **stack_a, t_list **stack_b)
